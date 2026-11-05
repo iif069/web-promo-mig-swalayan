@@ -18,7 +18,7 @@ Perubahan Code.gs dikerjakan di repo generator, bukan di sini.
 
 ## Cara kerja penting
 - `WA_NUMBER` di atas script: nomor WA toko format `62xxxxxxxxxx`. Kosong = tombol checkout abu-abu + teks "Nomor WhatsApp toko belum diatur". (Nomor belum diberikan pemilik.)
-- Foto lh3 (`=w800`) dimuat dengan `crossOrigin=anonymous`, lalu `cutWhite` membuang latar putih yang menyambung ke tepi dan memotong ruang kosong, supaya produk "berdiri" di rak gelap. Kalau foto tidak bisa dibaca canvas, foto asli tampil di alas putih membulat (class `raw`). Foto diproses satu per satu.
+- Foto lh3 (`=w800`) dimuat dengan `crossOrigin=anonymous`, lalu `cutWhite` membuang latar putih yang menyambung ke tepi, merapikan tepi (3 putaran membuang piksel terang keabuan yang menempel latar, sisa plastik bening/bayangan), membuang bintik lepas (<2% bagian terbesar), lalu memotong ruang kosong, supaya produk "berdiri" di rak gelap. Kalau foto tidak bisa dibaca canvas, foto asli tampil di alas putih membulat (class `raw`). Foto diproses satu per satu.
 - Nama produk: kalau di Sheet seluruhnya HURUF BESAR diubah jadi Huruf Awal Besar (satuan kg/gr/ml kecil, kata tanpa vokal mis. SKM tetap kapital); kalau sudah huruf besar-kecil dibiarkan.
 - Badge: diskon % (kuning) kalau harga coret > promo; label promo merah (`label`, default "Beli 2 lebih hemat") kalau `beli2`.
 - Keranjang disimpan di localStorage `migPromoCart` bersama id poster; kalau poster promo berganti, keranjang lama dikosongkan dan produk yang tidak ada lagi dibuang.
