@@ -60,41 +60,38 @@ main{position:relative;z-index:0;isolation:isolate;max-width:1180px;margin:0 aut
 .wall{background:radial-gradient(120% 60% at 50% 0%,#2A2116 0%,#16120C 60%,#100D08 100%);position:relative;overflow:hidden}
 .wall::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 1px,transparent 1px 4px),repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 1px,transparent 1px 3px);pointer-events:none}
 .rak{isolation:isolate;border-radius:22px;border:1px solid #2C251B;padding:26px 12px 4px;box-shadow:inset 0 0 60px rgba(0,0,0,.6)}
-.grid{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));row-gap:10px}
-@media(min-width:640px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.rak{padding:34px 20px 8px}}
+.grid{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:12px;row-gap:6px}
+@media(min-width:640px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}.rak{padding:34px 20px 8px}}
 @media(min-width:960px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(min-width:1140px){.grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
 
 .slot{position:relative;border:0;background:transparent;padding:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;text-align:center;transition:opacity .4s;-webkit-tap-highlight-color:transparent}
-.prod{position:relative;z-index:1;height:140px;width:100%;display:flex;align-items:flex-end;justify-content:center;padding:0 12%;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
-.prod img{max-width:100%;max-height:124px;width:auto;height:auto;object-fit:contain}
-.prod img.raw,.stage-img img.raw{background:#fff;border-radius:10px;padding:6px}
-.prod .ph{width:56%;height:110px;border-radius:12px;background:linear-gradient(110deg,#2A241B 30%,#3A3226 50%,#2A241B 70%);background-size:220% 100%;animation:shim 1.3s linear infinite}
+.bw{position:relative;z-index:1;width:100%;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.halo{position:absolute;inset:0;border-radius:14px;box-shadow:0 0 0 2px var(--y),0 0 26px 6px rgba(247,236,31,.45);opacity:0;transition:opacity .4s}
+.box{position:relative;width:100%;aspect-ratio:1/1.08;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 14px 22px -8px rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;padding:13%}
+.box::before{content:"";position:absolute;left:10%;right:10%;top:0;height:3px;border-radius:0 0 3px 3px;background:#fff;box-shadow:0 0 12px 3px rgba(255,255,255,.9)}
+.box::after,.dbox::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:inherit;background:linear-gradient(180deg,rgba(0,0,0,0) 62%,rgba(60,50,30,.07) 100%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)}
+.box img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;opacity:0;transition:opacity .35s}
+.box img.ok{opacity:1}
+.box .ph{position:absolute;inset:0;background:linear-gradient(110deg,#F4F3EF 30%,#FFFFFF 50%,#F4F3EF 70%);background-size:220% 100%;animation:shim 1.3s linear infinite}
+.box .nofoto{color:#B9B4A8;font-size:12px;font-weight:600}
 @keyframes shim{to{background-position:-120% 0}}
-.badges{position:absolute;top:0;left:6px;right:6px;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;gap:4px;pointer-events:none}
+.badges{position:absolute;top:8px;left:8px;right:8px;z-index:3;display:flex;justify-content:space-between;align-items:flex-start;gap:4px;pointer-events:none}
 .b-disc{font-size:11px;font-weight:700;color:var(--ink);background:var(--y);padding:3px 7px;border-radius:5px}
-.b-lbl{font-size:11px;font-weight:700;color:#fff;background:var(--red);padding:3px 8px;border-radius:999px;margin-left:auto;max-width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-
-.spot{position:absolute;left:0;right:0;top:-18px;height:186px;opacity:0;pointer-events:none;clip-path:polygon(40% 0,60% 0,100% 100%,0 100%);background:linear-gradient(180deg,rgba(252,245,150,0) 0%,rgba(250,240,110,.10) 45%,rgba(248,236,80,.26) 100%);transition:opacity .45s}
-.shelf{position:relative;width:100%;height:30px;margin-top:-4px}
-.shelf .top{position:absolute;left:0;right:0;top:0;height:10px;background:linear-gradient(180deg,rgba(214,236,230,.16),rgba(214,236,230,.06));clip-path:polygon(3% 0,97% 0,100% 100%,0 100%)}
-.shelf .pool{position:absolute;left:18%;right:18%;top:1px;height:8px;border-radius:50%;background:radial-gradient(closest-side,rgba(250,240,100,.75),rgba(250,240,100,0));opacity:0;transition:opacity .45s}
-.shelf .shadow{position:absolute;left:26%;right:26%;top:2px;height:6px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.55),rgba(0,0,0,0))}
-.shelf .front{position:absolute;left:0;right:0;top:10px;height:9px;background:linear-gradient(180deg,rgba(225,245,240,.42),rgba(150,175,168,.18) 60%,rgba(90,110,104,.28));border-top:1px solid rgba(255,255,255,.6);box-shadow:0 8px 12px -4px rgba(0,0,0,.65)}
-.shelf .shine{position:absolute;left:8%;width:30%;top:11px;height:2px;border-radius:2px;background:rgba(255,255,255,.55);opacity:.6}
-.shelf .led{position:absolute;left:4%;right:4%;top:20px;height:3px;border-radius:2px;background:#C9BE2A;opacity:.55;box-shadow:0 0 6px 1px rgba(240,220,30,.45);transition:opacity .35s}
-.shelf .led::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--y-soft);box-shadow:0 0 10px 2px rgba(250,240,110,.95),0 0 28px 8px rgba(240,220,30,.55),0 6px 60px 18px rgba(225,200,20,.35);opacity:0;transition:opacity .4s;will-change:opacity}
-.wallglow{position:absolute;left:-10%;right:-10%;top:22px;height:90px;pointer-events:none;background:radial-gradient(60% 100% at 50% 0%,rgba(245,230,50,.55),rgba(225,205,25,.12) 50%,rgba(240,225,40,0) 75%);opacity:.22;transition:opacity .45s;will-change:opacity}
-.slot.first .front,.slot.first .led{border-top-left-radius:4px;border-bottom-left-radius:4px}
-.slot.last .front,.slot.last .led{border-top-right-radius:4px;border-bottom-right-radius:4px}
+.b-lbl{font-size:10px;font-weight:700;color:#fff;background:var(--red);padding:3px 7px;border-radius:999px;margin-left:auto;max-width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.spot{position:absolute;left:0;right:0;top:-26px;height:calc(100% - 40px);opacity:0;pointer-events:none;clip-path:polygon(40% 0,60% 0,100% 100%,0 100%);background:linear-gradient(180deg,rgba(252,245,150,0) 0%,rgba(250,240,110,.10) 45%,rgba(248,236,80,.24) 100%);transition:opacity .45s}
+.ledw{position:relative;width:100%;height:16px}
+.led{position:absolute;left:4%;right:4%;top:9px;height:3px;border-radius:2px;background:#C9BE2A;opacity:.55;box-shadow:0 0 6px 1px rgba(240,220,30,.45);transition:opacity .35s}
+.led::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--y-soft);box-shadow:0 0 10px 2px rgba(250,240,110,.95),0 0 28px 8px rgba(240,220,30,.55),0 6px 50px 16px rgba(225,200,20,.35);opacity:0;transition:opacity .4s}
+.wallglow{position:absolute;left:-10%;right:-10%;top:10px;height:80px;pointer-events:none;background:radial-gradient(60% 100% at 50% 0%,rgba(245,230,50,.5),rgba(225,205,25,.1) 50%,rgba(240,225,40,0) 75%);opacity:.2;transition:opacity .45s}
 .info{position:relative;padding:8px 6px 16px;display:flex;flex-direction:column;gap:2px;min-height:70px}
 .info .nm{font-size:13px;font-weight:600;line-height:1.25;color:var(--fg);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .info .old{font-size:11px;color:var(--muted2);text-decoration:line-through}
 .info .new{font-family:var(--disp);font-size:18px;font-weight:800;color:var(--y)}
 
-@media(hover:hover){.slot:not(.dim):hover .prod{transform:translateY(-3px)}.slot:hover .led{opacity:.8}}
-.slot.lit .prod{transform:translateY(-6px) scale(1.07)}
-.slot.lit .spot,.slot.lit .pool{opacity:1}
+@media(hover:hover){.slot:not(.dim):hover .bw{transform:translateY(-3px)}.slot:hover .led{opacity:.8}}
+.slot.lit .bw{transform:translateY(-4px) scale(1.04)}
+.slot.lit .halo,.slot.lit .spot{opacity:1}
 .slot.lit .led{opacity:1}
 .slot.lit .led::after{opacity:1;animation:breathe 2.4s .4s ease-in-out infinite}
 .slot.lit .wallglow{opacity:1}
@@ -119,20 +116,14 @@ main{position:relative;z-index:0;isolation:isolate;max-width:1180px;margin:0 aut
 .stage .lamp{position:absolute;left:50%;top:-6px;width:56px;height:10px;margin-left:-28px;border-radius:0 0 8px 8px;background:#2A2419;box-shadow:0 4px 14px 2px rgba(250,240,110,.55)}
 .stage .floor{position:absolute;left:0;right:0;bottom:-96px;height:130px;background:radial-gradient(55% 100% at 50% 0%,rgba(245,230,50,.55),rgba(225,205,25,.14) 50%,rgba(240,225,40,0) 78%);pointer-events:none;opacity:0;transition:opacity .6s .25s}
 .ov.show .stage .cone,.ov.show .stage .floor{opacity:1}
-.d-badges{position:absolute;top:14px;left:16px;right:16px;display:flex;justify-content:space-between;gap:8px;z-index:2}
+.d-badges{position:absolute;top:12px;left:12px;right:12px;display:flex;justify-content:space-between;gap:8px;z-index:3}
 .d-badges .b-disc{font-size:13px;padding:5px 10px;border-radius:6px}
 .d-badges .b-lbl{font-size:13px;padding:5px 12px;max-width:80%}
-.stage-img{position:relative;z-index:1;height:calc(100% - 60px);width:60%;display:flex;align-items:flex-end;justify-content:center}
-.stage-img img{max-width:100%;max-height:min(100%,300px);width:auto;height:auto;object-fit:contain;will-change:transform}
-.stage-img::before{content:"";position:absolute;left:5%;right:5%;bottom:-6px;height:70%;background:radial-gradient(50% 60% at 50% 70%,rgba(248,236,80,.22),rgba(248,236,80,0));pointer-events:none}
-.bigshelf{position:relative;width:min(300px,80%);height:44px;margin-top:-8px}
-.bigshelf .top{position:absolute;left:0;right:0;top:0;height:18px;background:linear-gradient(180deg,rgba(252,245,160,.35),rgba(214,236,230,.08));clip-path:polygon(4% 0,96% 0,100% 100%,0 100%)}
-.bigshelf .pool{position:absolute;left:20%;right:20%;top:2px;height:14px;border-radius:50%;background:radial-gradient(closest-side,rgba(250,242,120,.9),rgba(250,242,120,0))}
-.bigshelf .front{position:absolute;left:0;right:0;top:18px;height:14px;border-radius:4px;background:linear-gradient(180deg,rgba(230,248,243,.5),rgba(150,175,168,.2) 60%,rgba(90,110,104,.3));border-top:1px solid rgba(255,255,255,.75);box-shadow:0 12px 18px -6px rgba(0,0,0,.7)}
-.bigshelf .shine{position:absolute;left:10%;width:34%;top:20px;height:3px;border-radius:2px;background:rgba(255,255,255,.6)}
-.bigshelf .led{position:absolute;left:3%;right:3%;top:33px;height:4px;border-radius:2px;background:var(--y-soft);box-shadow:0 0 12px 3px rgba(250,240,110,1)}
-.bigshelf .led::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 36px 12px rgba(240,220,30,.6),0 10px 90px 30px rgba(225,200,20,.4);animation:breathe 2.4s ease-in-out infinite;will-change:opacity}
-
+.dbox{position:relative;z-index:1;height:calc(100% - 60px);max-height:320px;aspect-ratio:1/1.12;max-width:82%;border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 0 0 2px var(--y),0 0 40px 10px rgba(247,236,31,.35),0 22px 30px -10px rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;padding:11%;will-change:transform}
+.dbox::before{content:"";position:absolute;left:12%;right:12%;top:0;height:4px;border-radius:0 0 4px 4px;background:#fff;box-shadow:0 0 16px 4px rgba(255,255,255,.95)}
+.dbox img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.dled{position:relative;width:min(300px,80%);height:4px;margin-top:16px;border-radius:2px;background:var(--y-soft);box-shadow:0 0 12px 3px rgba(250,240,110,1)}
+.dled::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 36px 12px rgba(240,220,30,.6),0 10px 80px 26px rgba(225,200,20,.38);animation:breathe 2.4s ease-in-out infinite}
 .panel{flex:1;background:#fff;color:var(--ink);border-radius:26px 26px 0 0;padding:22px 20px;padding-bottom:max(20px,env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:14px}
 .panel h2{margin:0;font-family:var(--disp);font-weight:800;font-size:26px;line-height:1.08;letter-spacing:-.01em}
 .p-lbl{font-size:12px;font-weight:600;color:#6B6B6B;text-transform:uppercase;letter-spacing:.06em}
@@ -148,8 +139,7 @@ main{position:relative;z-index:0;isolation:isolate;max-width:1180px;margin:0 aut
 @media(min-width:900px){
   .d-body{flex-direction:row;max-width:1180px;width:100%;margin:0 auto;padding:0 16px 24px;gap:24px;align-items:stretch}
   .stage{flex:1.3;height:auto;border-radius:24px}
-  .stage-img img{max-height:min(100%,440px)}
-  .stage-img{width:50%}
+  .dbox{max-height:480px}
   .panel{flex:1;max-width:440px;border-radius:24px;justify-content:center;padding:32px}
   .panel h2{font-size:32px}
   .btn-add{margin-top:12px}
@@ -168,7 +158,7 @@ main{position:relative;z-index:0;isolation:isolate;max-width:1180px;margin:0 aut
 .x-btn{width:44px;height:44px;border-radius:22px;border:0;background:#F2F2F2;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center}
 .lines{overflow-y:auto;display:flex;flex-direction:column;gap:10px;min-height:0}
 .line{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #ECECEC;border-radius:14px;padding:8px 8px 8px 10px}
-.line .th{width:48px;height:48px;border-radius:10px;background:#F6F6F6;display:flex;align-items:center;justify-content:center;flex:none;overflow:hidden}
+.line .th{width:48px;height:48px;border-radius:10px;background:#fff;border:1px solid #EEE;display:flex;align-items:center;justify-content:center;flex:none;overflow:hidden}
 .line .th img{max-width:40px;max-height:40px}
 .line .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
 .line .tx b{font-size:14px;font-weight:600;line-height:1.25}
@@ -241,9 +231,8 @@ main{position:relative;z-index:0;isolation:isolate;max-width:1180px;margin:0 aut
   <div class="d-body">
     <div class="stage wall">
       <div class="cone"></div><div class="lamp"></div><div class="floor"></div>
-      <div class="d-badges"><span class="b-disc" id="dDisc" hidden></span><span class="b-lbl" id="dLbl" hidden></span></div>
-      <div class="stage-img"><img id="dImg" alt=""></div>
-      <div class="bigshelf"><div class="top"></div><div class="pool"></div><div class="front"></div><div class="shine"></div><div class="led"></div></div>
+      <div class="dbox" id="dBox"><div class="d-badges"><span class="b-disc" id="dDisc" hidden></span><span class="b-lbl" id="dLbl" hidden></span></div><img id="dImg" alt=""></div>
+      <div class="dled"></div>
     </div>
     <div class="panel">
       <span class="p-lbl">Harga promo</span>
@@ -334,74 +323,10 @@ function jsonp(params, timeout = 20000) {
   });
 }
 
-/* ===== Foto: buang latar putih supaya produk "berdiri" di rak gelap ===== */
-function loadImg(url) {
-  return new Promise((res, rej) => {
-    const img = new Image(); img.crossOrigin = 'anonymous';
-    const t = setTimeout(() => rej(new Error('lambat')), 15000);
-    img.onload = () => { clearTimeout(t); res(img); };
-    img.onerror = () => { clearTimeout(t); rej(new Error('ditolak')); };
-    img.src = url;
-  });
+/* ===== Foto: dipajang apa adanya di kotak putih (latar putih foto menyatu, tidak dipotong) ===== */
+function imgTag(src) {
+  return src ? '<img src="' + esc(src) + '" alt="" loading="lazy" decoding="async" onload="this.classList.add(\'ok\');this.previousElementSibling&&this.previousElementSibling.remove()" onerror="this.parentNode.innerHTML=\'<span class=nofoto>Foto belum ada</span>\'">' : '<span class="nofoto">Foto belum ada</span>';
 }
-function cutWhite(img, max = 640) {
-  const k = Math.min(1, max / Math.max(img.width, img.height));
-  const W = Math.max(1, Math.round(img.width * k)), H = Math.max(1, Math.round(img.height * k));
-  const c = document.createElement('canvas'); c.width = W; c.height = H;
-  const x = c.getContext('2d'); x.drawImage(img, 0, 0, W, H);
-  const d = x.getImageData(0, 0, W, H), p = d.data; // melempar error kalau foto tidak boleh dibaca (CORS)
-  const bg = i => { const o = i * 4, r = p[o], g = p[o + 1], b = p[o + 2]; return p[o + 3] < 24 || (r >= 228 && g >= 228 && b >= 228 && Math.max(r, g, b) - Math.min(r, g, b) < 20); };
-  const seen = new Uint8Array(W * H), stack = new Int32Array(W * H); let sp = 0;
-  const push = i => { if (!seen[i] && bg(i)) { seen[i] = 1; stack[sp++] = i; } };
-  for (let i = 0; i < W; i++) { push(i); push((H - 1) * W + i); }
-  for (let j = 0; j < H; j++) { push(j * W); push(j * W + W - 1); }
-  while (sp) { const i = stack[--sp], xx = i % W; p[i * 4 + 3] = 0;
-    if (xx > 0) push(i - 1); if (xx < W - 1) push(i + 1); if (i >= W) push(i - W); if (i < W * (H - 1)) push(i + W); }
-  const touch = i => { const xx = i % W; return (xx > 0 && seen[i - 1]) || (xx < W - 1 && seen[i + 1]) || (i >= W && seen[i - W]) || (i < W * (H - 1) && seen[i + W]); };
-  // buang bintik kecil yang lepas dari produk (serpihan latar)
-  const comp = new Int32Array(W * H).fill(-1), sizes = [];
-  for (let s0 = 0; s0 < W * H; s0++) {
-    if (seen[s0] || comp[s0] >= 0) continue;
-    const id = sizes.length; let n = 0; sp = 0; stack[sp++] = s0; comp[s0] = id;
-    while (sp) { const i = stack[--sp], xx = i % W; n++;
-      let j;
-      if (xx > 0) { j = i - 1; if (!seen[j] && comp[j] < 0) { comp[j] = id; stack[sp++] = j; } }
-      if (xx < W - 1) { j = i + 1; if (!seen[j] && comp[j] < 0) { comp[j] = id; stack[sp++] = j; } }
-      if (i >= W) { j = i - W; if (!seen[j] && comp[j] < 0) { comp[j] = id; stack[sp++] = j; } }
-      if (i < W * (H - 1)) { j = i + W; if (!seen[j] && comp[j] < 0) { comp[j] = id; stack[sp++] = j; } } }
-    sizes.push(n);
-  }
-  let big = 0; for (const n of sizes) if (n > big) big = n;
-  for (let i = 0; i < W * H; i++) if (!seen[i] && sizes[comp[i]] < big * 0.02) { seen[i] = 1; p[i * 4 + 3] = 0; }
-  // tepi lembut setengah transparan
-  for (let i = 0; i < W * H; i++) { if (seen[i]) continue; const o = i * 4;
-    if (touch(i) && Math.min(p[o], p[o + 1], p[o + 2]) > 200) p[o + 3] = 140; }
-  x.putImageData(d, 0, 0);
-  let x0 = W, y0 = H, x1 = -1, y1 = -1;
-  for (let j = 0; j < H; j++) for (let i = 0; i < W; i++) if (p[(j * W + i) * 4 + 3] > 40) { if (i < x0) x0 = i; if (i > x1) x1 = i; if (j < y0) y0 = j; if (j > y1) y1 = j; }
-  if (x1 < x0) return c;
-  const t = document.createElement('canvas'); t.width = x1 - x0 + 1; t.height = y1 - y0 + 1;
-  t.getContext('2d').drawImage(c, x0, y0, t.width, t.height, 0, 0, t.width, t.height);
-  return t;
-}
-async function prepImage(it) {
-  if (!it.url) { it.src = ''; it.raw = false; paintImg(it); return; }
-  try {
-    const cv = cutWhite(await loadImg(it.url));
-    const blob = await new Promise(res => cv.toBlob(res, 'image/webp', 0.9));
-    if (!blob) throw new Error('blob');
-    it.src = URL.createObjectURL(blob); it.raw = false;
-  }
-  catch (e) { it.src = it.url; it.raw = true; } // foto tetap tampil, di atas alas putih
-  paintImg(it);
-}
-function paintImg(it) {
-  document.querySelectorAll('[data-img="' + it.id + '"]').forEach(box => {
-    box.innerHTML = it.src ? '<img src="' + esc(it.src) + '" alt=""' + (it.raw ? ' class="raw"' : '') + '>' : noPhoto();
-  });
-  if (state.open === it.id) setDetailImg(it);
-}
-const noPhoto = () => '<svg width="70" height="100" viewBox="0 0 70 100" aria-hidden="true"><rect x="8" y="10" width="54" height="86" rx="8" fill="#3A3226"/><rect x="16" y="40" width="38" height="20" rx="4" fill="#4A4033"/></svg>';
 
 /* ===== State ===== */
 const state = { items: [], judul: '', periode: '', poster: '', cart: {}, open: null, qty: 1, busy: false };
@@ -423,8 +348,8 @@ function normalize(list) {
       id: i, nama: titleCase(x.nama), coret: coret > promo ? coret : 0, promo,
       label: x.beli2 ? (String(x.label || '').trim() || 'Beli 2 lebih hemat') : '',
       disc: coret > promo ? Math.round((coret - promo) / coret * 100) : 0,
-      url: id ? 'https://lh3.googleusercontent.com/d/' + id + '=w800' : (x.foto || ''),
-      src: null, raw: false
+      url: id ? 'https://lh3.googleusercontent.com/d/' + id + '=w900' : (x.foto || ''),
+      thumb: id ? 'https://lh3.googleusercontent.com/d/' + id + '=w400' : (x.foto || '')
     };
   });
 }
@@ -463,9 +388,6 @@ function useData(d, demo) {
   loadCart(); renderCartCount();
   if (!state.items.length) return showState('empty');
   showState(null); renderGrid();
-  // proses foto satu per satu supaya HP tidak berat
-  const idle = () => new Promise(r => (window.requestIdleCallback ? requestIdleCallback(() => r(), { timeout: 600 }) : setTimeout(r, 30)));
-  (async () => { for (const it of state.items) { while (state.busy) await new Promise(r => setTimeout(r, 200)); await idle(); await prepImage(it); } })();
 }
 
 /* ===== Rak ===== */
@@ -485,46 +407,35 @@ function showState(kind) {
   const r = $('retry'); if (r) r.onclick = loadPromo;
 }
 function slotHTML(it, skeleton) {
-  const shelf = '<div class="shelf"><div class="wallglow"></div><div class="top"></div><div class="shadow"></div><div class="pool"></div><div class="front"></div><div class="shine"></div><div class="led"></div></div>';
-  if (skeleton) return '<div class="slot" aria-hidden="true"><div class="prod"><div class="ph"></div></div>' + shelf + '<div class="info"></div></div>';
+  const led = '<div class="ledw"><div class="wallglow"></div><div class="led"></div></div>';
+  if (skeleton) return '<div class="slot" aria-hidden="true"><div class="bw"><div class="box"><div class="ph"></div></div></div>' + led + '<div class="info"></div></div>';
   return '<button class="slot" data-id="' + it.id + '" aria-label="Lihat ' + esc(it.nama) + ', ' + rp(it.promo) + '">' +
     '<div class="spot"></div>' +
-    '<div class="badges">' + (it.disc ? '<span class="b-disc">-' + it.disc + '%</span>' : '<span></span>') + (it.label ? '<span class="b-lbl">' + esc(it.label) + '</span>' : '') + '</div>' +
-    '<div class="prod" data-img="' + it.id + '">' + (it.src ? '<img src="' + esc(it.src) + '" alt=""' + (it.raw ? ' class="raw"' : '') + '>' : (it.src === '' ? noPhoto() : '<div class="ph"></div>')) + '</div>' +
-    shelf +
+    '<div class="bw"><div class="halo"></div><div class="box">' +
+      '<div class="badges">' + (it.disc ? '<span class="b-disc">-' + it.disc + '%</span>' : '<span></span>') + (it.label ? '<span class="b-lbl">' + esc(it.label) + '</span>' : '') + '</div>' +
+      (it.thumb ? '<div class="ph"></div>' : '') + imgTag(it.thumb) +
+    '</div></div>' + led +
     '<div class="info"><span class="nm">' + esc(it.nama) + '</span>' + (it.coret ? '<span class="old">' + rp(it.coret) + '</span>' : '') + '<span class="new">' + rp(it.promo) + '</span></div>' +
     '</button>';
 }
 function renderGrid() {
   $('grid').innerHTML = state.items.map(it => slotHTML(it)).join('');
-  markEdges();
 }
-// ujung kiri/kanan tiap bilah rak dibulatkan
-function markEdges() {
-  const slots = [...document.querySelectorAll('#grid .slot')];
-  slots.forEach(s => s.classList.remove('first', 'last'));
-  let top = null, row = [];
-  const close = () => { if (row.length) { row[0].classList.add('first'); row[row.length - 1].classList.add('last'); } };
-  slots.forEach(s => { if (s.offsetTop !== top) { close(); row = []; top = s.offsetTop; } row.push(s); });
-  close();
-}
-addEventListener('resize', () => { clearTimeout(markEdges.t); markEdges.t = setTimeout(markEdges, 150); });
 
 $('grid').addEventListener('click', e => {
   const s = e.target.closest('.slot[data-id]'); if (!s || state.busy) return;
   const id = Number(s.dataset.id);
   state.busy = true;
   document.querySelectorAll('#grid .slot').forEach(x => x.classList.add(x === s ? 'lit' : 'dim'));
-  setTimeout(() => openDetail(id, s.querySelector('.prod img')), 620);
+  setTimeout(() => openDetail(id, s.querySelector('.bw')), 620);
 });
 
 /* ===== Detail ===== */
 function setDetailImg(it) {
   const img = $('dImg');
-  if (it.src) { img.src = it.src; img.className = it.raw ? 'raw' : ''; img.hidden = false; }
-  else img.hidden = true;
+  if (it.url) { img.src = it.url; img.hidden = false; } else img.hidden = true;
 }
-async function openDetail(id, fromImg) {
+async function openDetail(id, fromEl) {
   const it = state.items.find(i => i.id === id); if (!it) return;
   state.open = id; state.qty = 1;
   $('dNama').textContent = it.nama;
@@ -548,9 +459,9 @@ async function openDetail(id, fromImg) {
         { duration: 520, delay: 380, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'backwards' });
     }
     // zoom: foto terbang dari posisinya di rak ke panggung detail
-    const to = $('dImg');
-    if (fromImg && to.animate && !to.hidden) {
-      const a = fromImg.getBoundingClientRect(), b = to.getBoundingClientRect();
+    const to = $('dBox');
+    if (fromEl && to.animate) {
+      const a = fromEl.getBoundingClientRect(), b = to.getBoundingClientRect();
       if (a.width && b.width) {
         const s = a.height / b.height, dx = (a.left + a.width / 2) - (b.left + b.width / 2), dy = (a.top + a.height / 2) - (b.top + b.height / 2);
         to.animate([{ transform: 'translate(' + dx + 'px,' + dy + 'px) scale(' + s + ')' }, { transform: 'none' }], { duration: 650, easing: 'cubic-bezier(.2,.8,.2,1)' });
@@ -603,7 +514,7 @@ function renderCart() {
   $('cartEmpty').hidden = !!lines.length;
   $('tot').hidden = !lines.length;
   $('lines').innerHTML = lines.map(({ k, it, q }) =>
-    '<div class="line"><div class="th" data-img-th="' + it.id + '">' + (it.src ? '<img src="' + esc(it.src) + '" alt="">' : '') + '</div>' +
+    '<div class="line"><div class="th" data-img-th="' + it.id + '">' + (it.thumb ? '<img src="' + esc(it.thumb) + '" alt="">' : '') + '</div>' +
     '<div class="tx"><b>' + esc(it.nama) + '</b><span>' + rp(it.promo) + ' × ' + q + '</span><i>' + rp(it.promo * q) + '</i></div>' +
     '<div class="step"><button data-k="' + esc(k) + '" data-d="-1" aria-label="Kurangi ' + esc(it.nama) + '">−</button><span>' + q + '</span><button data-k="' + esc(k) + '" data-d="1" aria-label="Tambah ' + esc(it.nama) + '">+</button></div></div>'
   ).join('');
