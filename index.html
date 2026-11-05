@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14110C">
+<title>Promo MIG Swalayan</title>
+<meta name="description" content="Produk promo MIG Swalayan minggu ini. Pilih produk, masukkan keranjang, pesan lewat WhatsApp.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --y:#F7EC1F; --y-soft:#FBF27A; --g:#0D8A2C; --red:#E3201B;
+  --bg:#14110C; --bg2:#1E1A13; --line:#3A3226; --fg:#F6EFE2; --muted:#BFB29C; --muted2:#A89A82;
+  --cream:#F6EFE2; --cream2:#E9E0CE; --ink:#1A160F; --ink2:#5C5245;
+  --disp:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Plus Jakarta Sans',system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);-webkit-font-smoothing:antialiased}
+body.lock{overflow:hidden}
+button{font-family:inherit;color:inherit}
+img{display:block}
+a{color:var(--y)}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-thumb{background:#4A4033;border-radius:3px}
+::-webkit-scrollbar-button{display:none}
+:focus-visible{outline:3px solid var(--y);outline-offset:2px}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:0;z-index:20;background:rgba(20,17,12,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #241F17}
+.top-in{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;padding-top:max(12px,env(safe-area-inset-top))}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.logo{height:40px;padding:6px 10px;border-radius:12px;background:#fff;display:flex;align-items:center}
+.logo img{height:28px;width:auto}
+.brand-t{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.brand-t b{font-family:var(--disp);font-weight:800;font-size:16px}
+.brand-t span{font-size:12px;color:var(--muted)}
+.pill-btn{position:relative;height:44px;padding:0 14px;border-radius:22px;border:1px solid var(--line);background:var(--bg2);display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:600;font-size:14px;flex:none}
+.pill-btn:hover{border-color:#5A4F3D}
+.icon-btn{width:44px;height:44px;border-radius:22px;border:1px solid var(--line);background:var(--bg2);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none}
+.count{min-width:22px;height:22px;border-radius:11px;background:var(--y);color:var(--ink);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 6px}
+.count.bump{animation:bump .4s}
+@keyframes bump{40%{transform:scale(1.35)}}
+
+/* ---------- hero ---------- */
+main{max-width:1180px;margin:0 auto;padding:12px 16px 48px}
+.hero{display:flex;flex-direction:column;gap:6px;padding:8px 4px 20px}
+.tag{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--y);padding:5px 10px;border-radius:6px}
+.hero h1{margin:6px 0 0;font-family:var(--disp);font-weight:800;font-size:clamp(32px,7vw,56px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
+.hero p{margin:4px 0 0;font-size:14px;color:var(--muted);max-width:52ch}
+.periode{align-self:flex-start;margin-top:6px;font-size:13px;font-weight:700;color:#fff;background:var(--red);padding:6px 12px;border-radius:999px}
+
+/* ---------- dinding & rak ---------- */
+.wall{background:radial-gradient(120% 60% at 50% 0%,#2A2116 0%,#16120C 60%,#100D08 100%);position:relative;overflow:hidden}
+.wall::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 1px,transparent 1px 4px),repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 1px,transparent 1px 3px);pointer-events:none}
+.rak{border-radius:22px;border:1px solid #2C251B;padding:26px 12px 4px;box-shadow:inset 0 0 60px rgba(0,0,0,.6)}
+.grid{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));row-gap:10px}
+@media(min-width:640px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.rak{padding:34px 20px 8px}}
+@media(min-width:960px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(min-width:1140px){.grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+
+.slot{position:relative;border:0;background:transparent;padding:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;text-align:center;transition:opacity .4s;-webkit-tap-highlight-color:transparent}
+.prod{position:relative;z-index:1;height:140px;width:100%;display:flex;align-items:flex-end;justify-content:center;padding:0 12%;transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .45s}
+.prod img{max-width:100%;max-height:124px;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(0,0,0,.45))}
+.prod img.raw,.stage-img img.raw{background:#fff;border-radius:10px;padding:6px}
+.prod .ph{width:56%;height:110px;border-radius:12px;background:linear-gradient(110deg,#2A241B 30%,#3A3226 50%,#2A241B 70%);background-size:220% 100%;animation:shim 1.3s linear infinite}
+@keyframes shim{to{background-position:-120% 0}}
+.badges{position:absolute;top:0;left:6px;right:6px;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;gap:4px;pointer-events:none}
+.b-disc{font-size:11px;font-weight:700;color:var(--ink);background:var(--y);padding:3px 7px;border-radius:5px}
+.b-lbl{font-size:11px;font-weight:700;color:#fff;background:var(--red);padding:3px 8px;border-radius:999px;margin-left:auto;max-width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.spot{position:absolute;left:0;right:0;top:-18px;height:186px;opacity:0;pointer-events:none;clip-path:polygon(40% 0,60% 0,100% 100%,0 100%);background:linear-gradient(180deg,rgba(252,245,150,0) 0%,rgba(250,240,110,.10) 45%,rgba(248,236,80,.26) 100%);transition:opacity .45s}
+.shelf{position:relative;width:100%;height:30px;margin-top:-4px}
+.shelf .top{position:absolute;left:0;right:0;top:0;height:10px;background:linear-gradient(180deg,rgba(214,236,230,.16),rgba(214,236,230,.06));clip-path:polygon(3% 0,97% 0,100% 100%,0 100%)}
+.shelf .pool{position:absolute;left:18%;right:18%;top:1px;height:8px;border-radius:50%;background:radial-gradient(closest-side,rgba(250,240,100,.75),rgba(250,240,100,0));opacity:0;transition:opacity .45s}
+.shelf .shadow{position:absolute;left:26%;right:26%;top:2px;height:6px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.55),rgba(0,0,0,0))}
+.shelf .front{position:absolute;left:0;right:0;top:10px;height:9px;background:linear-gradient(180deg,rgba(225,245,240,.42),rgba(150,175,168,.18) 60%,rgba(90,110,104,.28));border-top:1px solid rgba(255,255,255,.6);box-shadow:0 8px 12px -4px rgba(0,0,0,.65)}
+.shelf .shine{position:absolute;left:8%;width:30%;top:11px;height:2px;border-radius:2px;background:rgba(255,255,255,.55);opacity:.6}
+.shelf .led{position:absolute;left:4%;right:4%;top:20px;height:3px;border-radius:2px;background:#C9BE2A;opacity:.55;box-shadow:0 0 6px 1px rgba(240,220,30,.45);transition:background .35s,box-shadow .35s,opacity .35s}
+.wallglow{position:absolute;left:-10%;right:-10%;top:22px;height:90px;pointer-events:none;background:radial-gradient(60% 100% at 50% 0%,rgba(240,225,40,.28),rgba(240,225,40,0) 70%);opacity:.45;transition:opacity .45s}
+.slot.first .front,.slot.first .led{border-top-left-radius:4px;border-bottom-left-radius:4px}
+.slot.last .front,.slot.last .led{border-top-right-radius:4px;border-bottom-right-radius:4px}
+.info{position:relative;padding:8px 6px 16px;display:flex;flex-direction:column;gap:2px;min-height:70px}
+.info .nm{font-size:13px;font-weight:600;line-height:1.25;color:var(--fg);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.info .old{font-size:11px;color:var(--muted2);text-decoration:line-through}
+.info .new{font-family:var(--disp);font-size:18px;font-weight:800;color:var(--y)}
+
+@media(hover:hover){.slot:not(.dim):hover .prod{transform:translateY(-3px)}.slot:hover .led{opacity:.8}}
+.slot.lit .prod{transform:translateY(-6px) scale(1.07);filter:drop-shadow(0 0 22px rgba(248,236,80,.35))}
+.slot.lit .spot,.slot.lit .pool{opacity:1}
+.slot.lit .led{opacity:1;background:var(--y-soft);box-shadow:0 0 10px 2px rgba(250,240,110,.95),0 0 28px 8px rgba(240,220,30,.55),0 6px 60px 18px rgba(225,200,20,.35);animation:breathe 2.4s ease-in-out infinite}
+.slot.lit .wallglow{opacity:1;background:radial-gradient(60% 100% at 50% 0%,rgba(245,230,50,.55),rgba(225,205,25,.12) 50%,rgba(240,225,40,0) 75%)}
+.slot.dim{opacity:.4}
+.slot.dim .prod{filter:saturate(.35) brightness(.55)}
+.slot.dim .led{opacity:.15}
+.slot.dim .wallglow{opacity:.08}
+@keyframes breathe{0%,100%{filter:brightness(1)}50%{filter:brightness(1.25)}}
+
+.state{padding:48px 20px;text-align:center;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:14px}
+.state b{color:var(--fg);font-family:var(--disp);font-size:20px}
+.btn-y{height:48px;padding:0 22px;border-radius:14px;border:0;background:var(--y);color:var(--ink);font-weight:700;font-size:15px;cursor:pointer}
+.foot{margin:18px 4px 0;font-size:12px;color:var(--muted2);text-align:center}
+.demo{margin:0 0 14px;padding:10px 14px;border-radius:12px;background:#2A2410;color:var(--y);font-size:13px;font-weight:600}
+
+/* ---------- detail ---------- */
+.ov{position:fixed;inset:0;z-index:40;background:var(--bg);display:flex;flex-direction:column;opacity:0;transition:opacity .3s}
+.ov.show{opacity:1}
+.ov-top{width:100%;max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;padding-top:max(12px,env(safe-area-inset-top));flex:none}
+.d-body{flex:1;display:flex;flex-direction:column;min-height:0}
+.stage{position:relative;flex:none;height:min(52vh,400px);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:34px}
+.stage .cone{position:absolute;left:50%;top:0;width:min(420px,100%);height:88%;transform:translateX(-50%);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);background:linear-gradient(180deg,rgba(252,246,160,0),rgba(250,240,110,.10) 45%,rgba(248,236,80,.30));pointer-events:none;opacity:0;transition:opacity .6s .25s}
+.stage .lamp{position:absolute;left:50%;top:-6px;width:56px;height:10px;margin-left:-28px;border-radius:0 0 8px 8px;background:#2A2419;box-shadow:0 4px 14px 2px rgba(250,240,110,.55)}
+.stage .floor{position:absolute;left:0;right:0;bottom:-96px;height:130px;background:radial-gradient(55% 100% at 50% 0%,rgba(245,230,50,.55),rgba(225,205,25,.14) 50%,rgba(240,225,40,0) 78%);pointer-events:none;opacity:0;transition:opacity .6s .25s}
+.ov.show .stage .cone,.ov.show .stage .floor{opacity:1}
+.d-badges{position:absolute;top:14px;left:16px;right:16px;display:flex;justify-content:space-between;gap:8px;z-index:2}
+.d-badges .b-disc{font-size:13px;padding:5px 10px;border-radius:6px}
+.d-badges .b-lbl{font-size:13px;padding:5px 12px;max-width:80%}
+.stage-img{position:relative;z-index:1;height:calc(100% - 60px);width:60%;display:flex;align-items:flex-end;justify-content:center}
+.stage-img img{max-width:100%;max-height:min(100%,300px);width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 18px 26px rgba(0,0,0,.55)) drop-shadow(0 0 30px rgba(248,236,80,.22))}
+.bigshelf{position:relative;width:min(300px,80%);height:44px;margin-top:-8px}
+.bigshelf .top{position:absolute;left:0;right:0;top:0;height:18px;background:linear-gradient(180deg,rgba(252,245,160,.35),rgba(214,236,230,.08));clip-path:polygon(4% 0,96% 0,100% 100%,0 100%)}
+.bigshelf .pool{position:absolute;left:20%;right:20%;top:2px;height:14px;border-radius:50%;background:radial-gradient(closest-side,rgba(250,242,120,.9),rgba(250,242,120,0))}
+.bigshelf .front{position:absolute;left:0;right:0;top:18px;height:14px;border-radius:4px;background:linear-gradient(180deg,rgba(230,248,243,.5),rgba(150,175,168,.2) 60%,rgba(90,110,104,.3));border-top:1px solid rgba(255,255,255,.75);box-shadow:0 12px 18px -6px rgba(0,0,0,.7)}
+.bigshelf .shine{position:absolute;left:10%;width:34%;top:20px;height:3px;border-radius:2px;background:rgba(255,255,255,.6)}
+.bigshelf .led{position:absolute;left:3%;right:3%;top:33px;height:4px;border-radius:2px;background:var(--y-soft);box-shadow:0 0 12px 3px rgba(250,240,110,1),0 0 36px 12px rgba(240,220,30,.6),0 10px 90px 30px rgba(225,200,20,.4);animation:breathe 2.4s ease-in-out infinite}
+
+.panel{flex:1;background:var(--cream);color:var(--ink);border-radius:26px 26px 0 0;padding:22px 20px;padding-bottom:max(20px,env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:14px;transform:translateY(40px);opacity:0;transition:transform .5s .15s cubic-bezier(.2,.8,.2,1),opacity .4s .15s}
+.ov.show .panel{transform:none;opacity:1}
+.panel h2{margin:0;font-family:var(--disp);font-weight:800;font-size:26px;line-height:1.08;letter-spacing:-.01em}
+.p-lbl{font-size:12px;font-weight:600;color:#6E6253;text-transform:uppercase;letter-spacing:.06em}
+.p-row{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.p-old{font-size:13px;color:#6E6253;text-decoration:line-through}
+.p-new{font-family:var(--disp);font-weight:800;font-size:34px;line-height:1;color:var(--g)}
+.p-save{margin-top:4px;font-size:12px;font-weight:700;color:var(--g)}
+.step{display:flex;align-items:center;gap:4px;background:var(--cream2);border-radius:26px;padding:4px}
+.step button{width:44px;height:44px;border-radius:22px;border:0;background:var(--cream);color:var(--ink);font-size:22px;font-weight:600;cursor:pointer}
+.step span{min-width:28px;text-align:center;font-weight:700;font-size:17px}
+.btn-add{margin-top:auto;height:56px;border-radius:16px;border:0;background:var(--ink);color:var(--y);font-weight:700;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px}
+.btn-add:active{transform:scale(.98)}
+@media(min-width:900px){
+  .d-body{flex-direction:row;max-width:1180px;width:100%;margin:0 auto;padding:0 16px 24px;gap:24px;align-items:stretch}
+  .stage{flex:1.3;height:auto;border-radius:24px}
+  .stage-img img{max-height:min(100%,440px)}
+  .stage-img{width:50%}
+  .panel{flex:1;max-width:440px;border-radius:24px;justify-content:center;padding:32px}
+  .panel h2{font-size:32px}
+  .btn-add{margin-top:12px}
+}
+
+/* ---------- keranjang ---------- */
+.sheet-wrap{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+.scrim{position:absolute;inset:0;border:0;background:rgba(8,6,3,.7);cursor:pointer;opacity:0;transition:opacity .3s}
+.sheet-wrap.show .scrim{opacity:1}
+.sheet{position:relative;width:100%;max-width:520px;max-height:86vh;background:var(--cream);color:var(--ink);border-radius:26px 26px 0 0;padding:10px 20px;padding-bottom:max(22px,env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:14px;transform:translateY(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.sheet-wrap.show .sheet{transform:none}
+@media(min-width:640px){.sheet-wrap{justify-content:center}.sheet{border-radius:24px;transform:translateY(30px);opacity:0;transition:transform .35s,opacity .3s}.sheet-wrap.show .sheet{opacity:1}}
+.grab{width:40px;height:4px;border-radius:2px;background:#CFC4AE;align-self:center}
+.sheet-h{display:flex;align-items:center;justify-content:space-between}
+.sheet-h h2{margin:0;font-family:var(--disp);font-weight:800;font-size:22px}
+.x-btn{width:44px;height:44px;border-radius:22px;border:0;background:var(--cream2);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lines{overflow-y:auto;display:flex;flex-direction:column;gap:10px;min-height:0}
+.line{display:flex;align-items:center;gap:12px;background:#fff;border-radius:14px;padding:8px 8px 8px 10px}
+.line .th{width:48px;height:48px;border-radius:10px;background:#F1EADB;display:flex;align-items:center;justify-content:center;flex:none;overflow:hidden}
+.line .th img{max-width:40px;max-height:40px}
+.line .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.line .tx b{font-size:14px;font-weight:600;line-height:1.25}
+.line .tx span{font-size:12px;color:#6E6253}
+.line .tx i{font-style:normal;font-size:14px;font-weight:700}
+.line .step{background:#F1EADB;padding:2px;gap:2px}
+.line .step button{background:transparent;font-size:20px}
+.line .step span{min-width:20px;font-size:15px}
+.empty{padding:28px 8px;text-align:center;color:var(--ink2);font-size:14px}
+.tot{display:flex;flex-direction:column;gap:12px;border-top:1px dashed #CFC4AE;padding-top:14px}
+.tot-r{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:var(--ink2)}
+.tot-r strong{color:var(--g)}
+.tot-r.big{font-size:15px;font-weight:600;color:var(--ink)}
+.tot-r.big span:last-child{font-family:var(--disp);font-weight:800;font-size:26px}
+.btn-wa{height:56px;border-radius:16px;background:var(--g);color:#fff;text-decoration:none;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer}
+.btn-wa[aria-disabled="true"]{background:#9AA59C;cursor:not-allowed}
+.note{font-size:12px;color:#6E6253;text-align:center}
+
+/* ---------- toast ---------- */
+.toast{position:fixed;left:50%;top:calc(76px + env(safe-area-inset-top));z-index:60;transform:translate(-50%,-10px);width:calc(100% - 32px);max-width:420px;background:var(--y);color:var(--ink);border-radius:14px;padding:12px 16px;font-size:14px;font-weight:700;display:flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <div class="brand">
+      <div class="logo"><img src="logo.png" alt="MIG Swalayan" width="80" height="28"></div>
+      <div class="brand-t"><b>Promo</b><span>MIG Swalayan</span></div>
+    </div>
+    <button class="pill-btn" id="cartBtn" aria-label="Buka keranjang">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
+      <span>Keranjang</span>
+      <span class="count" id="cartCount" hidden>0</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="demo" id="demoNote" hidden>Mode contoh: produk dan harga di bawah bukan data asli.</div>
+  <section class="hero">
+    <span class="tag">Promo Minggu Ini</span>
+    <h1 id="judul">Promo MIG Swalayan</h1>
+    <span class="periode" id="periode" hidden></span>
+    <p>Ketuk produk untuk lihat detail, masukkan ke keranjang, lalu pesan lewat WhatsApp.</p>
+  </section>
+
+  <section class="rak wall" aria-label="Rak produk promo">
+    <div class="grid" id="grid"></div>
+    <div class="state" id="stateBox" hidden></div>
+  </section>
+  <p class="foot">Harga berlaku selama periode promo dan selama persediaan masih ada.</p>
+</main>
+
+<!-- detail produk -->
+<div class="ov" id="detail" role="dialog" aria-modal="true" aria-labelledby="dNama" hidden>
+  <div class="ov-top">
+    <button class="icon-btn" id="dBack" aria-label="Kembali ke rak">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="pill-btn" id="dCart" aria-label="Buka keranjang">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
+      <span>Keranjang</span>
+      <span class="count" id="dCount" hidden>0</span>
+    </button>
+  </div>
+  <div class="d-body">
+    <div class="stage wall">
+      <div class="cone"></div><div class="lamp"></div><div class="floor"></div>
+      <div class="d-badges"><span class="b-disc" id="dDisc" hidden></span><span class="b-lbl" id="dLbl" hidden></span></div>
+      <div class="stage-img"><img id="dImg" alt=""></div>
+      <div class="bigshelf"><div class="top"></div><div class="pool"></div><div class="front"></div><div class="shine"></div><div class="led"></div></div>
+    </div>
+    <div class="panel">
+      <span class="p-lbl">Harga promo</span>
+      <h2 id="dNama"></h2>
+      <div class="p-row">
+        <div>
+          <div class="p-old" id="dOld"></div>
+          <div class="p-new" id="dNew"></div>
+          <div class="p-save" id="dSave"></div>
+        </div>
+        <div class="step">
+          <button id="qMin" aria-label="Kurangi jumlah">−</button>
+          <span id="qVal" aria-live="polite">1</span>
+          <button id="qPlus" aria-label="Tambah jumlah">+</button>
+        </div>
+      </div>
+      <button class="btn-add" id="addBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        <span id="addTxt">Tambah ke Keranjang</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- keranjang -->
+<div class="sheet-wrap" id="cart" role="dialog" aria-modal="true" aria-labelledby="cartTitle" hidden>
+  <button class="scrim" id="cartScrim" aria-label="Tutup keranjang"></button>
+  <div class="sheet">
+    <div class="grab"></div>
+    <div class="sheet-h">
+      <h2 id="cartTitle">Keranjang</h2>
+      <button class="x-btn" id="cartClose" aria-label="Tutup"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="empty" id="cartEmpty">Keranjang masih kosong. Pilih produk promo di rak dulu.</div>
+    <div class="lines" id="lines"></div>
+    <div class="tot" id="tot" hidden>
+      <div class="tot-r"><span>Total hemat</span><strong id="tSave"></strong></div>
+      <div class="tot-r big"><span>Total belanja</span><span id="tTotal"></span></div>
+      <a class="btn-wa" id="waBtn" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.3-4.3A8.5 8.5 0 1 1 20.5 11.8z"/><path d="M9 9.2c.3 1.8 2 3.9 4.2 4.8l1.1-1.1 1.9.8-.4 1.6c-3 .2-6.9-3.2-7.3-6.4l1.6-.5.8 1.9z"/></svg>
+        Checkout lewat WhatsApp
+      </a>
+      <span class="note" id="waNote">Daftar pesanan otomatis terisi di chat WA MIG Swalayan.</span>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>
+  <span id="toastTxt"></span>
+</div>
+
+<script>
+/* ===== Pengaturan ===== */
+// URL Web App Apps Script yang sama dengan generator promo-katalog (Sheet "Promo MIG Swalayan 2026")
+const API_URL = 'https://script.google.com/macros/s/AKfycbwNrB0DHLe0Vjw1e2tn0MpTVteuoYSfLOhoHM-KVGCjVXu1ibV9afwDYXnR5shbp9EPIw/exec';
+// Nomor WhatsApp MIG Swalayan, format 62xxxxxxxxxx (tanpa +, tanpa spasi). Kosong = tombol checkout nonaktif.
+const WA_NUMBER = '';
+
+/* ===== Alat bantu ===== */
+const $ = id => document.getElementById(id);
+const rp = n => 'Rp' + Number(n || 0).toLocaleString('id-ID');
+const keyOf = s => String(s || '').trim().toLowerCase().replace(/\s+/g, ' ');
+// "SUSU UHT 1 L" -> "Susu UHT 1 L"; satuan (kg, gr, ml) huruf kecil; kata tanpa huruf vokal (UHT, SKM) tetap kapital
+const UNITS = { kg: 'kg', gr: 'gr', g: 'g', ml: 'ml', mg: 'mg', ltr: 'ltr', l: 'L', pcs: 'pcs', pc: 'pc', cc: 'cc' };
+// Nama yang sudah diketik dengan huruf besar-kecil di Sheet dibiarkan apa adanya
+const titleCase = s => /[a-z]/.test(s) ? String(s).trim().replace(/\s+/g, ' ') : String(s).trim().replace(/\s+/g, ' ').split(' ').map(w => {
+  const lw = w.toLowerCase(), bare = lw.replace(/^\d+/, '');
+  if (UNITS[bare] !== undefined) return lw.slice(0, lw.length - bare.length) + UNITS[bare];
+  if (/^[a-z]{2,4}$/.test(lw) && !/[aiueo]/.test(lw)) return lw.toUpperCase();
+  return lw.replace(/(^|[(\/-])([a-z])/g, (m, a, b) => a + b.toUpperCase());
+}).join(' ');
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function driveId(src) {
+  const m = String(src || '').match(/\/d\/([\w-]{20,})/) || String(src || '').match(/[?&]id=([\w-]{20,})/);
+  return m ? m[1] : '';
+}
+function jsonp(params, timeout = 20000) {
+  return new Promise((res, rej) => {
+    const cb = 'cb_' + Date.now() + '_' + Math.floor(Math.random() * 1e6);
+    const s = document.createElement('script');
+    const t = setTimeout(() => { done(); rej(new Error('Waktu habis')); }, timeout);
+    function done() { clearTimeout(t); delete window[cb]; s.remove(); }
+    window[cb] = d => { done(); d && d.ok ? res(d) : rej(new Error(d && d.error || 'Gagal')); };
+    s.onerror = () => { done(); rej(new Error('Tidak bisa terhubung')); };
+    s.src = API_URL + '?' + new URLSearchParams({ ...params, callback: cb });
+    document.head.appendChild(s);
+  });
+}
+
+/* ===== Foto: buang latar putih supaya produk "berdiri" di rak gelap ===== */
+function loadImg(url) {
+  return new Promise((res, rej) => {
+    const img = new Image(); img.crossOrigin = 'anonymous';
+    const t = setTimeout(() => rej(new Error('lambat')), 15000);
+    img.onload = () => { clearTimeout(t); res(img); };
+    img.onerror = () => { clearTimeout(t); rej(new Error('ditolak')); };
+    img.src = url;
+  });
+}
+function cutWhite(img, max = 700) {
+  const k = Math.min(1, max / Math.max(img.width, img.height));
+  const W = Math.max(1, Math.round(img.width * k)), H = Math.max(1, Math.round(img.height * k));
+  const c = document.createElement('canvas'); c.width = W; c.height = H;
+  const x = c.getContext('2d'); x.drawImage(img, 0, 0, W, H);
+  const d = x.getImageData(0, 0, W, H), p = d.data; // melempar error kalau foto tidak boleh dibaca (CORS)
+  const bg = i => { const o = i * 4, r = p[o], g = p[o + 1], b = p[o + 2]; return p[o + 3] < 24 || (r >= 228 && g >= 228 && b >= 228 && Math.max(r, g, b) - Math.min(r, g, b) < 20); };
+  const seen = new Uint8Array(W * H), stack = new Int32Array(W * H); let sp = 0;
+  const push = i => { if (!seen[i] && bg(i)) { seen[i] = 1; stack[sp++] = i; } };
+  for (let i = 0; i < W; i++) { push(i); push((H - 1) * W + i); }
+  for (let j = 0; j < H; j++) { push(j * W); push(j * W + W - 1); }
+  while (sp) { const i = stack[--sp], xx = i % W; p[i * 4 + 3] = 0;
+    if (xx > 0) push(i - 1); if (xx < W - 1) push(i + 1); if (i >= W) push(i - W); if (i < W * (H - 1)) push(i + W); }
+  for (let i = 0; i < W * H; i++) { if (seen[i]) continue; const o = i * 4, xx = i % W;
+    const near = (xx > 0 && seen[i - 1]) || (xx < W - 1 && seen[i + 1]) || (i >= W && seen[i - W]) || (i < W * (H - 1) && seen[i + W]);
+    if (near && Math.min(p[o], p[o + 1], p[o + 2]) > 200) p[o + 3] = 110; }
+  x.putImageData(d, 0, 0);
+  let x0 = W, y0 = H, x1 = -1, y1 = -1;
+  for (let j = 0; j < H; j++) for (let i = 0; i < W; i++) if (p[(j * W + i) * 4 + 3] > 40) { if (i < x0) x0 = i; if (i > x1) x1 = i; if (j < y0) y0 = j; if (j > y1) y1 = j; }
+  if (x1 < x0) return c.toDataURL('image/png');
+  const t = document.createElement('canvas'); t.width = x1 - x0 + 1; t.height = y1 - y0 + 1;
+  t.getContext('2d').drawImage(c, x0, y0, t.width, t.height, 0, 0, t.width, t.height);
+  return t.toDataURL('image/png');
+}
+async function prepImage(it) {
+  if (!it.url) { it.src = ''; it.raw = false; paintImg(it); return; }
+  try { it.src = cutWhite(await loadImg(it.url)); it.raw = false; }
+  catch (e) { it.src = it.url; it.raw = true; } // foto tetap tampil, di atas alas putih
+  paintImg(it);
+}
+function paintImg(it) {
+  document.querySelectorAll('[data-img="' + it.id + '"]').forEach(box => {
+    box.innerHTML = it.src ? '<img src="' + esc(it.src) + '" alt=""' + (it.raw ? ' class="raw"' : '') + '>' : noPhoto();
+  });
+  if (state.open === it.id) setDetailImg(it);
+}
+const noPhoto = () => '<svg width="70" height="100" viewBox="0 0 70 100" aria-hidden="true"><rect x="8" y="10" width="54" height="86" rx="8" fill="#3A3226"/><rect x="16" y="40" width="38" height="20" rx="4" fill="#4A4033"/></svg>';
+
+/* ===== State ===== */
+const state = { items: [], judul: '', periode: '', poster: '', cart: {}, open: null, qty: 1, busy: false };
+const CART_KEY = 'migPromoCart';
+function loadCart() {
+  try { const c = JSON.parse(localStorage.getItem(CART_KEY) || '{}'); if (c.poster === state.poster) state.cart = c.items || {}; } catch (e) {}
+  const valid = new Set(state.items.map(i => keyOf(i.nama)));
+  Object.keys(state.cart).forEach(k => { if (!valid.has(k) || !(state.cart[k] > 0)) delete state.cart[k]; });
+}
+function saveCart() { try { localStorage.setItem(CART_KEY, JSON.stringify({ poster: state.poster, items: state.cart })); } catch (e) {} }
+const byKey = k => state.items.find(i => keyOf(i.nama) === k);
+
+/* ===== Ambil data promo ===== */
+function normalize(list) {
+  return list.filter(x => x && x.nama && Number(x.promo) > 0).map((x, i) => {
+    const id = driveId(x.foto);
+    const coret = Number(x.coret) || 0, promo = Number(x.promo) || 0;
+    return {
+      id: i, nama: titleCase(x.nama), coret: coret > promo ? coret : 0, promo,
+      label: x.beli2 ? (String(x.label || '').trim() || 'Beli 2 lebih hemat') : '',
+      disc: coret > promo ? Math.round((coret - promo) / coret * 100) : 0,
+      url: id ? 'https://lh3.googleusercontent.com/d/' + id + '=w800' : (x.foto || ''),
+      src: null, raw: false
+    };
+  });
+}
+async function loadPromo() {
+  showState('loading');
+  if (new URLSearchParams(location.search).has('contoh')) return useData(demoData(), true);
+  try {
+    let data = null;
+    // 1) poster promo terbaru yang disimpan dari generator
+    try {
+      const ps = (await jsonp({ action: 'posters' })).posters || [];
+      if (ps.length) {
+        const p = (await jsonp({ action: 'poster', nama: ps[0].nama })).poster || {};
+        if ((p.items || []).length) data = { judul: p.judul, periode: p.periode, poster: ps[0].nama + '|' + ps[0].waktu, items: p.items };
+      }
+    } catch (e) { /* lanjut ke cadangan */ }
+    // 2) cadangan: produk yang dicentang di tab database
+    if (!data) {
+      const items = ((await jsonp({ action: 'list' })).items || []).filter(i => i.pilih);
+      data = { judul: '', periode: '', poster: 'checkbox', items };
+    }
+    useData(data, false);
+  } catch (e) {
+    showState('error');
+  }
+}
+function useData(d, demo) {
+  state.judul = titleCase(d.judul || 'Promo MIG Swalayan');
+  state.periode = String(d.periode || '').trim();
+  state.poster = d.poster || '';
+  state.items = normalize(d.items || []);
+  $('demoNote').hidden = !demo;
+  $('judul').textContent = state.judul;
+  document.title = state.judul + ' · MIG Swalayan';
+  $('periode').hidden = !state.periode; $('periode').textContent = state.periode;
+  loadCart(); renderCartCount();
+  if (!state.items.length) return showState('empty');
+  showState(null); renderGrid();
+  // proses foto satu per satu supaya HP tidak berat
+  (async () => { for (const it of state.items) { await prepImage(it); await new Promise(r => setTimeout(r, 0)); } })();
+}
+
+/* ===== Rak ===== */
+function showState(kind) {
+  const box = $('stateBox'), grid = $('grid');
+  if (kind === 'loading') {
+    box.hidden = true;
+    grid.innerHTML = Array.from({ length: 6 }, (_, i) => slotHTML({ id: 'sk' + i, nama: '', promo: 0, coret: 0 }, true)).join('');
+    return;
+  }
+  if (!kind) { box.hidden = true; return; }
+  grid.innerHTML = '';
+  box.hidden = false;
+  box.innerHTML = kind === 'error'
+    ? '<b>Promo belum bisa dimuat</b><span>Periksa koneksi internet, lalu coba lagi.</span><button class="btn-y" id="retry">Coba lagi</button>'
+    : '<b>Belum ada promo minggu ini</b><span>Nantikan promo berikutnya dari MIG Swalayan.</span>';
+  const r = $('retry'); if (r) r.onclick = loadPromo;
+}
+function slotHTML(it, skeleton) {
+  const shelf = '<div class="shelf"><div class="wallglow"></div><div class="top"></div><div class="shadow"></div><div class="pool"></div><div class="front"></div><div class="shine"></div><div class="led"></div></div>';
+  if (skeleton) return '<div class="slot" aria-hidden="true"><div class="prod"><div class="ph"></div></div>' + shelf + '<div class="info"></div></div>';
+  return '<button class="slot" data-id="' + it.id + '" aria-label="Lihat ' + esc(it.nama) + ', ' + rp(it.promo) + '">' +
+    '<div class="spot"></div>' +
+    '<div class="badges">' + (it.disc ? '<span class="b-disc">-' + it.disc + '%</span>' : '<span></span>') + (it.label ? '<span class="b-lbl">' + esc(it.label) + '</span>' : '') + '</div>' +
+    '<div class="prod" data-img="' + it.id + '">' + (it.src ? '<img src="' + esc(it.src) + '" alt=""' + (it.raw ? ' class="raw"' : '') + '>' : (it.src === '' ? noPhoto() : '<div class="ph"></div>')) + '</div>' +
+    shelf +
+    '<div class="info"><span class="nm">' + esc(it.nama) + '</span>' + (it.coret ? '<span class="old">' + rp(it.coret) + '</span>' : '') + '<span class="new">' + rp(it.promo) + '</span></div>' +
+    '</button>';
+}
+function renderGrid() {
+  $('grid').innerHTML = state.items.map(it => slotHTML(it)).join('');
+  markEdges();
+}
+// ujung kiri/kanan tiap bilah rak dibulatkan
+function markEdges() {
+  const slots = [...document.querySelectorAll('#grid .slot')];
+  slots.forEach(s => s.classList.remove('first', 'last'));
+  let top = null, row = [];
+  const close = () => { if (row.length) { row[0].classList.add('first'); row[row.length - 1].classList.add('last'); } };
+  slots.forEach(s => { if (s.offsetTop !== top) { close(); row = []; top = s.offsetTop; } row.push(s); });
+  close();
+}
+addEventListener('resize', () => { clearTimeout(markEdges.t); markEdges.t = setTimeout(markEdges, 150); });
+
+$('grid').addEventListener('click', e => {
+  const s = e.target.closest('.slot[data-id]'); if (!s || state.busy) return;
+  const id = Number(s.dataset.id);
+  state.busy = true;
+  document.querySelectorAll('#grid .slot').forEach(x => x.classList.add(x === s ? 'lit' : 'dim'));
+  setTimeout(() => openDetail(id, s.querySelector('.prod img')), 620);
+});
+
+/* ===== Detail ===== */
+function setDetailImg(it) {
+  const img = $('dImg');
+  if (it.src) { img.src = it.src; img.className = it.raw ? 'raw' : ''; img.hidden = false; }
+  else img.hidden = true;
+}
+function openDetail(id, fromImg) {
+  const it = state.items.find(i => i.id === id); if (!it) return;
+  state.open = id; state.qty = 1;
+  $('dNama').textContent = it.nama;
+  $('dOld').textContent = it.coret ? rp(it.coret) : '';
+  $('dNew').textContent = rp(it.promo);
+  $('dSave').textContent = it.coret ? 'Hemat ' + rp(it.coret - it.promo) : '';
+  $('dDisc').hidden = !it.disc; $('dDisc').textContent = '-' + it.disc + '%';
+  $('dLbl').hidden = !it.label; $('dLbl').textContent = it.label;
+  $('dImg').alt = it.nama;
+  setDetailImg(it); renderQty();
+  const ov = $('detail'); ov.hidden = false; document.body.classList.add('lock');
+  history.pushState({ v: 'detail' }, '');
+  requestAnimationFrame(() => {
+    ov.classList.add('show');
+    // zoom: foto terbang dari posisinya di rak ke panggung detail
+    const to = $('dImg');
+    if (fromImg && to.animate && !to.hidden) {
+      const a = fromImg.getBoundingClientRect(), b = to.getBoundingClientRect();
+      if (a.width && b.width) {
+        const s = a.height / b.height, dx = (a.left + a.width / 2) - (b.left + b.width / 2), dy = (a.top + a.height / 2) - (b.top + b.height / 2);
+        to.animate([{ transform: 'translate(' + dx + 'px,' + dy + 'px) scale(' + s + ')' }, { transform: 'none' }], { duration: 650, easing: 'cubic-bezier(.2,.8,.2,1)' });
+      }
+    }
+    $('dBack').focus({ preventScroll: true });
+  });
+}
+function closeDetail() {
+  const ov = $('detail'); if (ov.hidden) return;
+  ov.classList.remove('show');
+  setTimeout(() => {
+    ov.hidden = true; document.body.classList.remove('lock');
+    const s = document.querySelector('#grid .slot[data-id="' + state.open + '"]');
+    document.querySelectorAll('#grid .slot').forEach(x => x.classList.remove('lit', 'dim'));
+    state.open = null; state.busy = false;
+    if (s) s.focus({ preventScroll: true });
+  }, 300);
+}
+function renderQty() {
+  const it = state.items.find(i => i.id === state.open); if (!it) return;
+  $('qVal').textContent = state.qty;
+  $('addTxt').textContent = 'Tambah ke Keranjang · ' + rp(it.promo * state.qty);
+}
+$('qMin').onclick = () => { state.qty = Math.max(1, state.qty - 1); renderQty(); };
+$('qPlus').onclick = () => { state.qty = Math.min(99, state.qty + 1); renderQty(); };
+$('addBtn').onclick = () => {
+  const it = state.items.find(i => i.id === state.open); if (!it) return;
+  const k = keyOf(it.nama);
+  state.cart[k] = Math.min(99, (state.cart[k] || 0) + state.qty);
+  saveCart(); renderCartCount(true);
+  toast(state.qty + ' × ' + it.nama + ' masuk keranjang');
+  state.qty = 1; renderQty();
+};
+$('dBack').onclick = () => history.back();
+
+/* ===== Keranjang ===== */
+function cartLines() {
+  return Object.keys(state.cart).map(k => ({ k, it: byKey(k), q: state.cart[k] })).filter(l => l.it);
+}
+function renderCartCount(bump) {
+  const n = cartLines().reduce((a, l) => a + l.q, 0);
+  ['cartCount', 'dCount'].forEach(id => {
+    const el = $(id); el.hidden = !n; el.textContent = n;
+    if (bump) { el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); }
+  });
+}
+function renderCart() {
+  const lines = cartLines();
+  $('cartEmpty').hidden = !!lines.length;
+  $('tot').hidden = !lines.length;
+  $('lines').innerHTML = lines.map(({ k, it, q }) =>
+    '<div class="line"><div class="th" data-img-th="' + it.id + '">' + (it.src ? '<img src="' + esc(it.src) + '" alt="">' : '') + '</div>' +
+    '<div class="tx"><b>' + esc(it.nama) + '</b><span>' + rp(it.promo) + ' × ' + q + '</span><i>' + rp(it.promo * q) + '</i></div>' +
+    '<div class="step"><button data-k="' + esc(k) + '" data-d="-1" aria-label="Kurangi ' + esc(it.nama) + '">−</button><span>' + q + '</span><button data-k="' + esc(k) + '" data-d="1" aria-label="Tambah ' + esc(it.nama) + '">+</button></div></div>'
+  ).join('');
+  const total = lines.reduce((a, l) => a + l.it.promo * l.q, 0);
+  const hemat = lines.reduce((a, l) => a + (l.it.coret ? (l.it.coret - l.it.promo) * l.q : 0), 0);
+  $('tTotal').textContent = rp(total); $('tSave').textContent = rp(hemat);
+  const msg = 'Halo MIG Swalayan, saya mau pesan produk promo' + (state.judul ? ' "' + state.judul + '"' : '') + ':\n' +
+    lines.map((l, i) => (i + 1) + '. ' + l.it.nama + ' x' + l.q + ' = ' + rp(l.it.promo * l.q)).join('\n') +
+    '\n\nTotal: ' + rp(total) + '\n\nNama:\nAmbil di toko / antar ke:';
+  const wa = String(WA_NUMBER).replace(/\D/g, '');
+  const btn = $('waBtn');
+  if (wa) { btn.href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(msg); btn.removeAttribute('aria-disabled'); $('waNote').textContent = 'Daftar pesanan otomatis terisi di chat WA MIG Swalayan.'; }
+  else { btn.removeAttribute('href'); btn.setAttribute('aria-disabled', 'true'); $('waNote').textContent = 'Nomor WhatsApp toko belum diatur.'; }
+}
+$('lines').addEventListener('click', e => {
+  const b = e.target.closest('button[data-k]'); if (!b) return;
+  const k = b.dataset.k, q = (state.cart[k] || 0) + Number(b.dataset.d);
+  if (q <= 0) delete state.cart[k]; else state.cart[k] = Math.min(99, q);
+  saveCart(); renderCartCount(); renderCart();
+});
+function openCart() {
+  renderCart();
+  const w = $('cart'); w.hidden = false; document.body.classList.add('lock');
+  history.pushState({ v: 'cart' }, '');
+  requestAnimationFrame(() => { w.classList.add('show'); $('cartClose').focus({ preventScroll: true }); });
+}
+function closeCart() {
+  const w = $('cart'); if (w.hidden) return;
+  w.classList.remove('show');
+  setTimeout(() => { w.hidden = true; if ($('detail').hidden) document.body.classList.remove('lock'); }, 320);
+}
+$('cartBtn').onclick = openCart;
+$('dCart').onclick = openCart;
+$('cartClose').onclick = () => history.back();
+$('cartScrim').onclick = () => history.back();
+
+/* tombol kembali HP menutup jendela yang terbuka */
+addEventListener('popstate', () => {
+  if (!$('cart').hidden) return closeCart();
+  if (!$('detail').hidden) return closeDetail();
+});
+addEventListener('keydown', e => { if (e.key === 'Escape' && (!$('cart').hidden || !$('detail').hidden)) history.back(); });
+
+function toast(t) {
+  $('toastTxt').textContent = t; const el = $('toast');
+  el.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('show'), 1900);
+}
+
+/* ===== Data contoh (buka dengan ?contoh) ===== */
+function demoData() {
+  const box = (c, w, h, kind) => {
+    const svg = kind === 'bottle'
+      ? '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 160" width="300" height="480"><rect width="100" height="160" fill="#fff"/><rect x="40" y="4" width="20" height="14" rx="3" fill="#2A2A2A"/><path d="M38 18h24v10l12 14H26l12-14z" fill="' + c + '"/><rect x="22" y="40" width="56" height="116" rx="16" fill="' + c + '"/><rect x="27" y="78" width="46" height="42" rx="5" fill="#f4f4f4"/></svg>'
+      : kind === 'bag'
+      ? '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 146" width="330" height="438"><rect width="110" height="146" fill="#fff"/><path d="M18 18 Q55 6 92 18 L100 128 Q55 144 10 128 Z" fill="' + c + '"/><rect x="28" y="58" width="54" height="42" rx="6" fill="#f4f4f4"/></svg>'
+      : '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150" width="300" height="450"><rect width="100" height="150" fill="#fff"/><rect x="16" y="6" width="68" height="140" rx="5" fill="' + c + '"/><rect x="23" y="62" width="54" height="40" rx="4" fill="#f4f4f4"/></svg>';
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  };
+  const raw = [
+    ['MINYAK GORENG 2 L', 38500, 34900, false, '#E3B505', 'bottle'],
+    ['BERAS PREMIUM 5 KG', 78000, 72500, false, '#C9B98F', 'bag'],
+    ['SUSU UHT COKELAT 1 L', 21000, 18500, false, '#3E6FE0', 'box'],
+    ['GULA PASIR 1 KG', 18500, 16900, false, '#D94F3D', 'bag'],
+    ['KOPI SUSU SACHET ISI 10', 15500, 13900, true, '#7A4A2C', 'box'],
+    ['SABUN CUCI PIRING 780 ML', 17900, 14900, false, '#2BB673', 'bottle'],
+    ['MIE INSTAN GORENG ISI 5', 15000, 13500, true, '#E4572E', 'bag'],
+    ['TEH CELUP ISI 25', 9500, 8000, false, '#B5162B', 'box']
+  ];
+  return { judul: 'PROMO HEMAT AWAL BULAN', periode: '5–11 November 2026', poster: 'contoh',
+    items: raw.map(r => ({ nama: r[0], coret: r[1], promo: r[2], beli2: r[3], foto: box(r[4], 0, 0, r[5]) })) };
+}
+
+loadPromo();
+</script>
+</body>
+</html>
